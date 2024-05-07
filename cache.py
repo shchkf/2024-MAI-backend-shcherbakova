@@ -1,6 +1,5 @@
 class LRUCache:
     def __init__(self, capacity: int = 10) -> None:
-
         self.capacity = capacity
         self.data = {}
 
@@ -14,7 +13,7 @@ class LRUCache:
             return ""
 
     def set(self, key: str, value: str) -> None:
-        if key in self.data:  # уже есть
+        if key in self.data:
             del self.data[key]
             self.data[key] = value
         else:
