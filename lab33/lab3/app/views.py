@@ -64,26 +64,8 @@ def cosmetic(request, cosmetic_id):
 
 @csrf_exempt
 @require_http_methods(['PUT', 'POST'])
-def change_rating(request, film_id, user_id):
+def change_rating(request, cosmetic_id, user_id):
     return JsonResponse({'rating': 'not changed'})
-    # if film_id is None or user_id is None:
-    #     return HttpResponseBadRequest({'error': 'cosmetic or user id is missing'})
-    # current_user = User.objects.get(pk=user_id)
-    # current_cosmetic= Cosmetic.objects.get(pk=film_id)
-    # if request.method == "PUT":
-    #     rate = int(json.loads(request.body)['rate'])
-    #     old_rate = Rating.objects.get(user_id=current_user, film_id=current_cosmetic)
-    #     rate_delta = rate - old_rate['summ_rating']
-    #     old_rate.update(summ_rating=rate)
-    #     summ_rating = ['summ_rating'] + rate_delta
-    #     current_cosmetic.update(summ_rating=summ_rating)
-    #     return JsonResponse({'status': "ok"})
-    # elif request.method == "POST":
-    #     rate = int(json.loads(request.body)['rate'])
-    #     Rating.objects.create(user_id=current_user, film_id=current_cosmetic, rate=rate)
-    #     rating = current_cosmetic['rating'] + rate
-    #     count_rating = current_cosmetic['count_rating'] + 1
-    #     current_cosmetic.update(rating=rating, count_rating=count_rating)
-    #     return JsonResponse({'status': "ok"})
+
 
 
